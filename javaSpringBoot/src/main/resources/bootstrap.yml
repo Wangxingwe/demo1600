@@ -1,0 +1,22 @@
+# 1、mybatis配置
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  config-location: classpath:mybatis/mybatis-config.xml
+# 问题：理论上可以直接在这里配置mappers映射路径，但是失败了，而且路径 mappers-locations: classpath:mappers/**/*.xml
+
+# 2、服务器端口
+server:
+  port: 8080
+
+#logback配置文件  问题：日志文件还有点问题，没有在指定位置输出日志信息
+logging:
+  config: classpath:logback/logback-spring.xml
+  file:
+    path: D:/logs/
+    name: loginfo.log
+  level:
+    root: info
+    org.springframework: info
+    com.ax: info
